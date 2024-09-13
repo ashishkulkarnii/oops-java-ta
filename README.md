@@ -1,35 +1,39 @@
 # oops-java-ta
 This repository contains assignments and files I created during my stint as an undergraduate TA (teaching assistant) for the 6th-semester course Object-Oriented Analysis and Design with Java (UE21CS352B).
 
-## Contents
+## Contents:
+
+<!-- TOC start (generated with https://github.com/derlin/bitdowntoc) -->
 
 - [oops-java-ta](#oops-java-ta)
-  * [Lab 1: Use-case Modeling](#lab-1--use-case-modeling)
-  * [Lab 2: Class Diagrams](#lab-2--class-diagrams)
-  * [Lab 3: Activity and State Diagrams](#lab-3--activity-and-state-diagrams)
-  * [Lab 5: Method Overloading, Constructor Overloading, Composition, and Aggregation](#lab-5--method-overloading--constructor-overloading--composition--and-aggregation)
-    + [[Method Overloading Problem Statement](https://www.hackerrank.com/contests/ooadj-lab-week-5/challenges/method-overloading-ooadj)](#-method-overloading-problem-statement--https---wwwhackerrankcom-contests-ooadj-lab-week-5-challenges-method-overloading-ooadj-)
-    + [[Constructor Overloading Problem Statement](https://www.hackerrank.com/contests/ooadj-lab-week-5/challenges/constructor-overloading-ooadj)](#-constructor-overloading-problem-statement--https---wwwhackerrankcom-contests-ooadj-lab-week-5-challenges-constructor-overloading-ooadj-)
-    + [[Composition and Aggregation Problem Statement](https://www.hackerrank.com/contests/ooadj-lab-week-5/challenges/composition-and-aggregation)](#-composition-and-aggregation-problem-statement--https---wwwhackerrankcom-contests-ooadj-lab-week-5-challenges-composition-and-aggregation-)
-  * [Lab 6: Inheritance and Interfaces](#lab-6--inheritance-and-interfaces)
-    + [[Inheritance Problem Statement](https://www.hackerrank.com/contests/ooadj-lab-week-6/challenges/inheritance-ooadj)](#-inheritance-problem-statement--https---wwwhackerrankcom-contests-ooadj-lab-week-6-challenges-inheritance-ooadj-)
-    + [[Interfaces Problem Statement](https://www.hackerrank.com/contests/ooadj-lab-week-6/challenges/interfaces-ooadj)](#-interfaces-problem-statement--https---wwwhackerrankcom-contests-ooadj-lab-week-6-challenges-interfaces-ooadj-)
-  * [Lab 7: Abstract Classes, ArrayLists, Linked Lists, and Stacks](#lab-7--abstract-classes--arraylists--linked-lists--and-stacks)
-    + [[Abstract Classes Problem Statement](https://www.hackerrank.com/contests/ooadj-lab-week-7/challenges/abstract-class-ooadj)](#-abstract-classes-problem-statement--https---wwwhackerrankcom-contests-ooadj-lab-week-7-challenges-abstract-class-ooadj-)
-    + [[ArrayLists Problem Statement](https://www.hackerrank.com/contests/ooadj-lab-week-7/challenges/arraylist-ooadj)](#-arraylists-problem-statement--https---wwwhackerrankcom-contests-ooadj-lab-week-7-challenges-arraylist-ooadj-)
-    + [[Linked Lists Problem Statement](https://www.hackerrank.com/contests/ooadj-lab-week-7/challenges/linked-list-ooadj)](#-linked-lists-problem-statement--https---wwwhackerrankcom-contests-ooadj-lab-week-7-challenges-linked-list-ooadj-)
-    + [[Stacks Problem Statement](https://www.hackerrank.com/contests/ooadj-lab-week-7/challenges/stack-ooadj)](#-stacks-problem-statement--https---wwwhackerrankcom-contests-ooadj-lab-week-7-challenges-stack-ooadj-)
-  * [Lab 8: Multithreading and Serialization](#lab-8--multithreading-and-serialization)
-    + [Multithreading Problem Statement](#multithreading-problem-statement)
-      - [Input](#input)
-      - [Output](#output)
-    + [Serialization Problem Statement](#serialization-problem-statement)
-      - [Example Interaction](#example-interaction)
-  * [Lab 9: MVC Architecture](#lab-9--mvc-architecture)
-    + [Problem Statement](#problem-statement-1)
+   * [Lab 1: Use-case Modeling](#lab-1-use-case-modeling)
+   * [Lab 2: Class Diagrams](#lab-2-class-diagrams)
+   * [Lab 3: Activity and State Diagrams](#lab-3-activity-and-state-diagrams)
+   * [Lab 5: Method Overloading, Constructor Overloading, Composition, and Aggregation](#lab-5-method-overloading-constructor-overloading-composition-and-aggregation)
+      + [Method Overloading](#method-overloading-problem-statement)
+      + [Constructor Overloading](#constructor-overloading-problem-statement)
+      + [Composition and Aggregation](#composition-and-aggregation-problem-statement)
+   * [Lab 6: Inheritance and Interfaces](#lab-6-inheritance-and-interfaces)
+      + [Inheritance](#inheritance-problem-statement)
+      + [Interfaces](#interfaces-problem-statement)
+   * [Lab 7: Abstract Classes, ArrayLists, Linked Lists, and Stacks](#lab-7-abstract-classes-arraylists-linked-lists-and-stacks)
+      + [Abstract Classes](#abstract-classes-problem-statement)
+      + [ArrayLists](#arraylists-problem-statement)
+      + [Linked Lists](#linked-lists-problem-statement)
+      + [Stacks](#stacks-problem-statement)
+   * [Lab 8: Multithreading and Serialization](#lab-8-multithreading-and-serialization)
+      + [Multithreading](#multithreading-problem-statement)
+      + [Serialization](#serialization-problem-statement)
+   * [Lab 9: MVC Architecture](#lab-9-mvc-architecture)
 
+<!-- TOC end -->
+
+<!-- TOC --><a name="oops-java-ta"></a>
+
+<!-- TOC --><a name="lab-1-use-case-modeling"></a>
 ## Lab 1: Use-case Modeling
 
+<!-- TOC --><a name="problem-statement"></a>
 ### Problem Statement
 
 Draw a use-case model to describe the interactions between a retail investor, stockbroker and stock exchange.
@@ -39,16 +43,19 @@ It is important to note that the orders can only be placed during market trading
 
 <details><summary>Solution</summary>
 
+<!-- TOC --><a name="use-case-diagram"></a>
 ### Use-case Diagram
 
 ![Use-case diagram describing the given problem statement](1-use-case-modeling/use-case-diagram.drawio.svg)
 
 </details>
 
+<!-- TOC --><a name="lab-2-class-diagrams"></a>
 ## Lab 2: Class Diagrams
 
 Prepare a detailed class diagram for XYZ Bank, including all classes, their methods and attributes (with visibility notation), relevant relationships (dependencies, generalizations, associations) with cardinalities, enumeration, etc. as described by the case study given below.
 
+<!-- TOC --><a name="xyz-bank-case-study"></a>
 ### XYZ Bank Case Study
 
 - XYZ Bank is a large banking company, with many branches across various locations. Some details regarding each branch, such as date of inception, IFSC code, address and phone number must be recorded to the system. There must be a method to allow for the opening of new branches.
@@ -60,14 +67,17 @@ Prepare a detailed class diagram for XYZ Bank, including all classes, their meth
 
 <details><summary>Solution</summary>
 
+<!-- TOC --><a name="class-diagram"></a>
 ### Class Diagram
 
 ![Class diagram describing the given problem statement](2-class-diagrams/class-diagram.drawio.svg)
 
 </details>
 
+<!-- TOC --><a name="lab-3-activity-and-state-diagrams"></a>
 ## Lab 3: Activity and State Diagrams
 
+<!-- TOC --><a name="activity-diagram-problem-statement"></a>
 ### Activity Diagram Problem Statement
 
 A user logs in (or signs up) to Zomato to order food. Before the order is sent to the restaurant, the user must make the payment.
@@ -77,12 +87,14 @@ Until the food is delivered, the user cannot make another purchase.
 
 <details><summary>Solution</summary>
 
+<!-- TOC --><a name="activity-diagram"></a>
 ### Activity Diagram
 
 ![Activity diagram describing the given problem statement](3-activity-and-state-diagrams/activity-diagram.drawio.svg)
 
 </details>
 
+<!-- TOC --><a name="state-diagram-problem-statement"></a>
 ### State Diagram Problem Statement
 
 The delivery agent logs in to their version of the Zomato app, where they must wait until they get a delivery job.
@@ -92,14 +104,17 @@ The agent once again waits for their next job, until they log out.
 
 <details><summary>Solution</summary>
 
+<!-- TOC --><a name="state-diagram"></a>
 ### State Diagram
 
 ![State diagram describing the given problem statement](3-activity-and-state-diagrams/state-diagram.drawio.svg)
 
 </details>
 
+<!-- TOC --><a name="lab-5-method-overloading-constructor-overloading-composition-and-aggregation"></a>
 ## Lab 5: Method Overloading, Constructor Overloading, Composition, and Aggregation
 
+<!-- TOC --><a name="method-overloading-problem-statement"></a>
 ### [Method Overloading Problem Statement](https://www.hackerrank.com/contests/ooadj-lab-week-5/challenges/method-overloading-ooadj)
 
 Create a class that stores employee details, named `Employee`. An object of `Employee` is instantiated using the employee's name.
@@ -128,6 +143,7 @@ The output must be as follows:
 
 <details><summary>Solution</summary>
 
+<!-- TOC --><a name="code"></a>
 ### Code
 
 ```java
@@ -184,6 +200,7 @@ public class Solution {
 
 </details>
 
+<!-- TOC --><a name="constructor-overloading-problem-statement"></a>
 ### [Constructor Overloading Problem Statement](https://www.hackerrank.com/contests/ooadj-lab-week-5/challenges/constructor-overloading-ooadj)
 
 A company is creating a sign up page, where a new user can sign in by entering their name and contact. Contact can be in the form of an email ID, or a phone number. Create a class `SignUp` that uses constructor overloading in such a way that an object of the class can be instantiated with the user's name, and either their email (string) or phone number (long integer).
@@ -214,6 +231,7 @@ abc_def@example.com
 
 <details><summary>Solution</summary>
 
+<!-- TOC --><a name="code-1"></a>
 ### Code
 
 ```java
@@ -281,6 +299,7 @@ public class Solution {
 
 </details>
 
+<!-- TOC --><a name="composition-and-aggregation-problem-statement"></a>
 ### [Composition and Aggregation Problem Statement](https://www.hackerrank.com/contests/ooadj-lab-week-5/challenges/composition-and-aggregation)
 
 Create a system that can handle two kinds of inputs:
@@ -329,6 +348,7 @@ top-level domain: com
 
 <details><summary>Solution</summary>
 
+<!-- TOC --><a name="code-2"></a>
 ### Code
 
 ```java
@@ -416,8 +436,10 @@ public class Solution {
 
 </details>
 
+<!-- TOC --><a name="lab-6-inheritance-and-interfaces"></a>
 ## Lab 6: Inheritance and Interfaces
 
+<!-- TOC --><a name="inheritance-problem-statement"></a>
 ### [Inheritance Problem Statement](https://www.hackerrank.com/contests/ooadj-lab-week-6/challenges/inheritance-ooadj)
 
 In this problem, you will be required to use the concept of inheritance (`class X extends class Y`).
@@ -446,6 +468,7 @@ The output must be the nth number of the requested sequence.
 
 <details><summary>Solution</summary>
 
+<!-- TOC --><a name="code-3"></a>
 ### Code
 
 ```java
@@ -535,6 +558,7 @@ public class Solution {
 
 </details>
 
+<!-- TOC --><a name="interfaces-problem-statement"></a>
 ### [Interfaces Problem Statement](https://www.hackerrank.com/contests/ooadj-lab-week-6/challenges/interfaces-ooadj)
 
 Compulsorily use the concepts of interfaces to solve this problem. Failure to abide by this rule will result in zero marks.
@@ -573,6 +597,7 @@ Example outputs:
 
 <details><summary>Solution</summary>
 
+<!-- TOC --><a name="code-4"></a>
 ### Code
 
 ```java
@@ -672,8 +697,10 @@ public class Solution {
 
 </details>
 
+<!-- TOC --><a name="lab-7-abstract-classes-arraylists-linked-lists-and-stacks"></a>
 ## Lab 7: Abstract Classes, ArrayLists, Linked Lists, and Stacks
 
+<!-- TOC --><a name="abstract-classes-problem-statement"></a>
 ### [Abstract Classes Problem Statement](https://www.hackerrank.com/contests/ooadj-lab-week-7/challenges/abstract-class-ooadj)
 
 Compulsorily use the concept of abstract classes to solve this problem. Failure to abide by this rule will result in zero marks.
@@ -831,6 +858,7 @@ public class Solution {
 
 </details>
 
+<!-- TOC --><a name="arraylists-problem-statement"></a>
 ### [ArrayLists Problem Statement](https://www.hackerrank.com/contests/ooadj-lab-week-7/challenges/arraylist-ooadj)
 
 Compulsorily use the concept of ArrayList to solve this problem. Failure to abide by this rule will result in zero marks.
@@ -860,6 +888,7 @@ Output Example:
 
 <details><summary>Solution</summary>
 
+<!-- TOC --><a name="code-5"></a>
 ### Code
 
 ```java
@@ -897,6 +926,7 @@ public class Solution {
 
 </details>
 
+<!-- TOC --><a name="linked-lists-problem-statement"></a>
 ### [Linked Lists Problem Statement](https://www.hackerrank.com/contests/ooadj-lab-week-7/challenges/linked-list-ooadj)
 
 Compulsorily use the concept of Linked List to solve this problem. Failure to abide by this rule will result in zero marks.
@@ -928,6 +958,7 @@ Output Example:
 
 <details><summary>Solution</summary>
 
+<!-- TOC --><a name="code-6"></a>
 ### Code
 
 ```java
@@ -975,6 +1006,7 @@ public class Solution {
 
 </details>
 
+<!-- TOC --><a name="stacks-problem-statement"></a>
 ### [Stacks Problem Statement](https://www.hackerrank.com/contests/ooadj-lab-week-7/challenges/stack-ooadj)
 
 Compulsorily use the concept of Stack to solve this problem. Failure to abide by this rule will result in zero marks.
@@ -1000,6 +1032,7 @@ Output Format:
 
 <details><summary>Solution</summary>
 
+<!-- TOC --><a name="code-7"></a>
 ### Code
 
 ```java
@@ -1029,8 +1062,10 @@ public class Solution {
 
 </details>
 
+<!-- TOC --><a name="lab-8-multithreading-and-serialization"></a>
 ## Lab 8: Multithreading and Serialization
 
+<!-- TOC --><a name="multithreading-problem-statement"></a>
 ### Multithreading Problem Statement
 
 There is a restaurant that needs to assign all of its orders to its chefs. Each dish has a specific amount of time it takes to be prepared, and each chef can only work on one dish at a time. Use multithreading to get the sequence of completion of the orders, assuming they are being concurrently prepared by all the chefs.
@@ -1039,6 +1074,7 @@ Display messages when an order is assigned to the chef, when the order is in pro
 
 Note that based on the way you assign orders to a chef, and the number of chefs you have in your restaurant, you may have orders completed in a different order. In this example output, I have cyclically assigned orders to each of the 3 total chefs.
 
+<!-- TOC --><a name="input"></a>
 #### Input
 ```
 Burger 6 minutes
@@ -1050,6 +1086,7 @@ Steak 9 minutes
 Soup 2 minutes
 ```
 
+<!-- TOC --><a name="output"></a>
 #### Output
 ```
 Order #1 assigned to Chef #1
@@ -1075,6 +1112,7 @@ Order #4 is ready.
 Order #1 is ready.
 ```
 
+<!-- TOC --><a name="serialization-problem-statement"></a>
 ### Serialization Problem Statement
 
 Create a command-line application for saving contacts.
@@ -1091,6 +1129,7 @@ Use serialization for data persistence, so that each time the program is invoked
 
 Look into `ObjectInputStream` and `FileInputStream`, and `ObjectOutputStream` and `FileOutputStream` for reading from and writing to the local save of the address book. These classes are imported when you `import java.io.*`.
 
+<!-- TOC --><a name="example-interaction"></a>
 #### Example Interaction
 ```
 Welcome to Contacts App!
@@ -1149,6 +1188,7 @@ Enter your choice: 5
 Exiting... Contacts saved.
 ```
 
+<!-- TOC --><a name="lab-9-mvc-architecture"></a>
 ## Lab 9: MVC Architecture
 
 The MVC is one of the most widely used architecture patterns for application and web development. MVC stands for Model View Controller:
@@ -1176,12 +1216,14 @@ In case you decide to use *Vaadin*, look into the following components:
 - [TextField](https://vaadin.com/docs/latest/components/text-field)
 - [Dialog](https://vaadin.com/docs/latest/components/dialog)
 
+<!-- TOC --><a name="problem-statement-1"></a>
 ### Problem Statement
 
 Create an employee directory by storing each employee’s name using a HashMap, where the key is their ID and value is their name. Create another HashMap that determines the employees who are under a specific employee. Here, the key will be an employee ID, and the value will be a List of reporting employee IDs.
 
 In the UI, have methods to display all employees, add an employee, get an employee’s subordinates’ names, and add a subordinate to an employee.
 
+<!-- TOC --><a name="solution"></a>
 ### Solution
 
 [mvc folder](9-mvc/mvc/)
