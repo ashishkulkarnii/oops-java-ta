@@ -1,6 +1,32 @@
 # oops-java-ta
 This repository contains assignments and files I created during my stint as an undergraduate TA (teaching assistant) for the 6th-semester course Object-Oriented Analysis and Design with Java (UE21CS352B).
 
+## Contents
+
+- [oops-java-ta](#oops-java-ta)
+  * [Lab 1: Use-case Modeling](#lab-1--use-case-modeling)
+  * [Lab 2: Class Diagrams](#lab-2--class-diagrams)
+  * [Lab 3: Activity and State Diagrams](#lab-3--activity-and-state-diagrams)
+  * [Lab 5: Method Overloading, Constructor Overloading, Composition, and Aggregation](#lab-5--method-overloading--constructor-overloading--composition--and-aggregation)
+    + [[Method Overloading Problem Statement](https://www.hackerrank.com/contests/ooadj-lab-week-5/challenges/method-overloading-ooadj)](#-method-overloading-problem-statement--https---wwwhackerrankcom-contests-ooadj-lab-week-5-challenges-method-overloading-ooadj-)
+    + [[Constructor Overloading Problem Statement](https://www.hackerrank.com/contests/ooadj-lab-week-5/challenges/constructor-overloading-ooadj)](#-constructor-overloading-problem-statement--https---wwwhackerrankcom-contests-ooadj-lab-week-5-challenges-constructor-overloading-ooadj-)
+    + [[Composition and Aggregation Problem Statement](https://www.hackerrank.com/contests/ooadj-lab-week-5/challenges/composition-and-aggregation)](#-composition-and-aggregation-problem-statement--https---wwwhackerrankcom-contests-ooadj-lab-week-5-challenges-composition-and-aggregation-)
+  * [Lab 6: Inheritance and Interfaces](#lab-6--inheritance-and-interfaces)
+    + [[Inheritance Problem Statement](https://www.hackerrank.com/contests/ooadj-lab-week-6/challenges/inheritance-ooadj)](#-inheritance-problem-statement--https---wwwhackerrankcom-contests-ooadj-lab-week-6-challenges-inheritance-ooadj-)
+    + [[Interfaces Problem Statement](https://www.hackerrank.com/contests/ooadj-lab-week-6/challenges/interfaces-ooadj)](#-interfaces-problem-statement--https---wwwhackerrankcom-contests-ooadj-lab-week-6-challenges-interfaces-ooadj-)
+  * [Lab 7: Abstract Classes, ArrayLists, Linked Lists, and Stacks](#lab-7--abstract-classes--arraylists--linked-lists--and-stacks)
+    + [[Abstract Classes Problem Statement](https://www.hackerrank.com/contests/ooadj-lab-week-7/challenges/abstract-class-ooadj)](#-abstract-classes-problem-statement--https---wwwhackerrankcom-contests-ooadj-lab-week-7-challenges-abstract-class-ooadj-)
+    + [[ArrayLists Problem Statement](https://www.hackerrank.com/contests/ooadj-lab-week-7/challenges/arraylist-ooadj)](#-arraylists-problem-statement--https---wwwhackerrankcom-contests-ooadj-lab-week-7-challenges-arraylist-ooadj-)
+    + [[Linked Lists Problem Statement](https://www.hackerrank.com/contests/ooadj-lab-week-7/challenges/linked-list-ooadj)](#-linked-lists-problem-statement--https---wwwhackerrankcom-contests-ooadj-lab-week-7-challenges-linked-list-ooadj-)
+    + [[Stacks Problem Statement](https://www.hackerrank.com/contests/ooadj-lab-week-7/challenges/stack-ooadj)](#-stacks-problem-statement--https---wwwhackerrankcom-contests-ooadj-lab-week-7-challenges-stack-ooadj-)
+  * [Lab 8: Multithreading and Serialization](#lab-8--multithreading-and-serialization)
+    + [Multithreading Problem Statement](#multithreading-problem-statement)
+      - [Input](#input)
+      - [Output](#output)
+    + [Serialization Problem Statement](#serialization-problem-statement)
+      - [Example Interaction](#example-interaction)
+  * [Lab 9: MVC Architecture](#lab-9--mvc-architecture)
+    + [Problem Statement](#problem-statement-1)
 
 ## Lab 1: Use-case Modeling
 
