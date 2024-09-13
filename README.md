@@ -390,3 +390,259 @@ public class Solution {
 
 </details>
 
+## Lab 6: Inheritance and Interfaces
+
+### [Inheritance Problem Statement](https://www.hackerrank.com/contests/ooadj-lab-week-6/challenges/inheritance-ooadj)
+
+In this problem, you will be required to use the concept of inheritance (`class X extends class Y`).
+
+Create an abstract class `Sequence` which has the method `getNthNumber`.
+
+1. Create a class `Fibonacci` that extends `Sequence`. The first 2 numbers in the Fibonacci are `0` and `1`, and `Fibonacci(n) = Fibonacci(n-1) + Fibonacci(n-2)`.
+2. Create a class `ArithmeticProgression` that adds the variables `first_term` and `difference`. Use these variables to compute the answer for `getNthNumber` using the AP nth term formula.
+	- Create a class `WholeNumbers` that extends `ArithmeticProgression`. This is an arithmetic progression with `first_term=0` and `difference=1`.
+	- Create a class `MultiplesOfFive` that extends `ArithmeticProgression`, and this sequence starts at `0`.
+
+Make sure you follow the same naming conventions, since keyword matching will be used to validate whether you have used the concepts of inheritance and abstract class.
+
+The input will be one line starting with the type of sequence: `fibonacci`, `ap`, `whole` or `five`. Followed by a space, we will define `n`. In the case of arithmetic progression, this will be followed by the first term and difference, all separated by a single space.
+
+Examples:
+
+- `fibonacci <n>`
+- `ap <n> <first_term> <difference>`
+
+Constraints:
+- `1 <= n <= 47`
+- `-10^3 <= first_term, difference <= 10^3`
+
+The output must be the nth number of the requested sequence.
+
+<details><summary>Solution</summary>
+
+### Code
+
+```java
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+abstract class Sequence {
+    int getNthNumber(int n) {
+        return n;
+    };
+}
+
+class Fibonacci extends Sequence {
+    int getNthNumber(int n) {
+        if(n == 1) {
+            return 0;
+        }
+        else if(n == 2) {
+            return 1;
+        }
+        else {
+            int a = 0, b = 1, c = a + b;
+            for(int i = 3; i <= n; ++i) {
+                c = a + b;
+                a = b;
+                b = c;
+            }
+            return c;
+        }
+    }
+}
+
+class ArithmeticProgression extends Sequence {
+    int a = 0, d = 0;
+    
+    ArithmeticProgression(int a, int d) {
+        this.a = a;
+        this.d = d;
+    }
+    
+    int getNthNumber(int n) {
+        return this.a + (n - 1) * this.d;
+    }
+}
+
+class WholeNumbers extends ArithmeticProgression {
+    WholeNumbers() {
+        super(0, 1);
+    }
+}
+
+class MultiplesOfFive extends ArithmeticProgression {
+    MultiplesOfFive() {
+        super(0, 5);
+    }
+}
+
+public class Solution {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        String input = s.nextLine();
+        String seq_type = input.split(" ")[0];
+        int n = Integer.parseInt(input.split(" ")[1]);
+        if(seq_type.equals("ap")) {
+            int a = Integer.parseInt(input.split(" ")[2]), d = Integer.parseInt(input.split(" ")[3]);
+            ArithmeticProgression ap = new ArithmeticProgression(a, d);
+            System.out.println(ap.getNthNumber(n));
+        }
+        else if(seq_type.equals("fibonacci")) {
+            Fibonacci fib = new Fibonacci();
+            System.out.println(fib.getNthNumber(n));
+        }
+        else if(seq_type.equals("whole")) {
+            WholeNumbers whole = new WholeNumbers();
+            System.out.println(whole.getNthNumber(n));
+        }
+        else if(seq_type.equals("five")) {
+            MultiplesOfFive five = new MultiplesOfFive();
+            System.out.println(five.getNthNumber(n));
+        }
+    }
+}
+```
+
+</details>
+
+### [Interfaces Problem Statement](https://www.hackerrank.com/contests/ooadj-lab-week-6/challenges/interfaces-ooadj)
+
+Compulsorily use the concepts of interfaces to solve this problem. Failure to abide by this rule will result in zero marks.
+
+Create an interface `Encryption` that has two methods: `encrypt()` and `decrypt()`. This form of encryption deals with encrypting strings.
+
+There are two standards of encryption: `FooEncryption`, and `BarEncryption`. These will be represented as classes implementing `Encryption`.
+
+*FooEncryption* of a string `s` can be defined by the following equation:
+
+`s[i] -> ascii_char(ascii_number(s[i]) - (i % 2) + 3)`
+
+*BarEncryption* of a string `s` can be defined by the following equation:
+
+`s[i] -> ascii_char((ascii_number(s[i]) - ascii_number(s[i-1]) + 80)` if i >= 1, else
+
+`s[i] -> s[i]`
+
+The input will be given to you as follows:
+
+`<encryption type: foo or bar> <encrypt or decrypt: en or de> <input string>`
+
+Examples:
+- `foo en HELLOWORLD`
+- `bar de HELLOWORLD`
+
+Constraints:
+- `1 <= length(input_string) <= 65`
+- `input_string` consists of only capital letters.
+
+Output must be the output string of either encryption or decryption using the standard specified in the input
+
+Example outputs:
+- `KGONRYRTOF`
+- `H9DAKSNYKF`
+
+<details><summary>Solution</summary>
+
+### Code
+
+```java
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+interface Encryption {
+    public void encrypt();
+    public void decrypt();
+}
+
+class FooEncryption implements Encryption {
+    String str;
+    
+    FooEncryption(String str) {
+        this.str = str;
+    }
+    
+    public void encrypt() {
+        String res = "";
+        for(int i = 0; i < this.str.length(); ++i) {
+            char c = (char) (((int) this.str.charAt(i)) - (i % 2) + 3);
+            res = res + c;
+        }
+        this.str = res;
+    }
+    
+    public void decrypt() {
+        String res = "";
+        for(int i = 0; i < this.str.length(); ++i) {
+            char c = (char) (((int) this.str.charAt(i)) + (i % 2) - 3);
+            res = res + c;
+        }
+        this.str = res;
+    }
+}
+
+class BarEncryption implements Encryption {
+    String str;
+    
+    BarEncryption(String str) {
+        this.str = str;
+    }
+    
+    public void encrypt() {
+        String res = String.valueOf(this.str.charAt(0));
+        for(int i = 1; i < this.str.length(); ++i) {
+            char c = (char) (((int) this.str.charAt(i)) - ((int) this.str.charAt(i - 1)) + 80);
+            res = res + c;
+        }
+        this.str = res;   
+    }
+    
+    public void decrypt() {
+        String res = String.valueOf(this.str.charAt(0));
+        for(int i = 1; i < this.str.length(); ++i) {
+            char c = (char) (((int) this.str.charAt(i)) + ((int) this.str.charAt(i - 1)) - 80);
+            res = res + c;
+        }
+        this.str = res;   
+    }
+}
+
+public class Solution {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        String input = s.nextLine();
+        String fb = input.split(" ")[0], ed = input.split(" ")[1], str = input.split(" ")[2];
+        if(fb.equals("foo")) {
+            FooEncryption x = new FooEncryption(str);
+            if(ed.equals("en")) {
+                x.encrypt();
+                System.out.println(x.str);
+            }
+            else {
+                x.decrypt();
+                System.out.println(x.str);
+            }
+        }
+        else {
+            BarEncryption x = new BarEncryption(str);
+            if(ed.equals("en")) {
+                x.encrypt();
+                System.out.println(x.str);
+            }
+            else {
+                x.decrypt();
+                System.out.println(x.str);
+            }
+        }
+    }
+}
+```
+
+</details>
+
