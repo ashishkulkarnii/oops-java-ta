@@ -46,8 +46,6 @@ domain: example
 top-level domain: com
 ```
 
-<details><summary>Solution</summary>
-
 ### Code
 
 ```java
@@ -132,5 +130,3 @@ public class Solution {
     }
 }
 ```
-
-</details>

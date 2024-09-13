@@ -26,8 +26,6 @@ Constraints:
 
 The output must be the nth number of the requested sequence.
 
-<details><summary>Solution</summary>
-
 ### Code
 
 ```java
@@ -114,5 +112,3 @@ public class Solution {
     }
 }
 ```
-
-</details>

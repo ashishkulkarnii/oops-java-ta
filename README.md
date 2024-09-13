@@ -646,3 +646,516 @@ public class Solution {
 
 </details>
 
+## Lab 7: Abstract Classes, ArrayLists, Linked Lists, and Stacks
+
+### [Abstract Classes Problem Statement](https://www.hackerrank.com/contests/ooadj-lab-week-7/challenges/abstract-class-ooadj)
+
+Compulsorily use the concept of abstract classes to solve this problem. Failure to abide by this rule will result in zero marks.
+
+Create an abstract class called `Shape`. Create classes `Square` and `Triangle` that extend `Shape`. Each class must have two methods: `drawSolid()`, `drawHollow()` and `getArea()`, and one integer variables `x`. An object of either of these classes must be instantiated using `x`.
+
+Draw the shapes using `.` (period). Examples are given below.
+
+After drawing, print the area of the shape using `getArea()`. (`getArea()` returns a floating-point value.)
+
+Input Format:
+`<square or tri> <x> <solid or hollow>`
+
+Constraints:
+- `1 <= x <= 20`
+
+Output Examples:
+
+```
+square 5 hollow:
+.....
+.   .
+.   .
+.   .
+.....
+25.0
+```
+
+```
+tri 5 hollow
+.
+..
+. .
+.  .
+.....
+12.5
+```
+
+<details><summary>Solution</summary>
+
+```java
+// import java.io.*;
+import java.util.*;
+
+abstract class Shape {
+    int x;
+
+    Shape(int x) {
+        this.x = x;
+    }
+
+    abstract void drawSolid();
+
+    abstract void drawHollow();
+
+    abstract double getArea();
+}
+
+class Square extends Shape {
+    Square(int x) {
+        super(x);
+    }
+
+    void drawSolid() {
+        for (int i = 0; i < x; i++) {
+            for (int j = 0; j < x; j++) {
+                System.out.print(".");
+            }
+            System.out.println();
+        }
+    }
+
+    void drawHollow() {
+        for (int i = 0; i < x; i++) {
+            for (int j = 0; j < x; j++) {
+                if (i == 0 || i == x - 1 || j == 0 || j == x - 1) {
+                    System.out.print(".");
+                } else {
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+        }
+    }
+
+    double getArea() {
+        return x * x;
+    }
+}
+
+class Triangle extends Shape {
+    Triangle(int x) {
+        super(x);
+    }
+
+    void drawSolid() {
+        for (int i = 0; i < x; i++) {
+            for (int j = 0; j <= i; j++) {
+                System.out.print(".");
+            }
+            System.out.println();
+        }
+    }
+
+    void drawHollow() {
+        for (int i = 0; i < x; i++) {
+            for (int j = 0; j <= i; j++) {
+                if (i == 0 || i == x - 1 || j == 0 || j == i) {
+                    System.out.print(".");
+                } else {
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+        }
+    }
+
+    double getArea() {
+        return 0.5 * x * x;
+    }
+}
+
+public class Solution {
+    public static void main(String[] args) {
+        /*
+         * Enter your code here. Read input from STDIN. Print output to STDOUT. Your
+         * class should be named Solution.
+         */
+        Scanner sc = new Scanner(System.in);
+        String shape = sc.next();
+        int x = sc.nextInt();
+        String type = sc.next();
+
+        if (shape.equals("square")) {
+            Square s = new Square(x);
+            if (type.equals("solid")) {
+                s.drawSolid();
+            } else {
+                s.drawHollow();
+            }
+            System.out.println(s.getArea());
+        } else {
+            Triangle t = new Triangle(x);
+            if (type.equals("solid")) {
+                t.drawSolid();
+            } else {
+                t.drawHollow();
+            }
+            System.out.println(t.getArea());
+        }
+        sc.close();
+    }
+}
+```
+
+</details>
+
+### [ArrayLists Problem Statement](https://www.hackerrank.com/contests/ooadj-lab-week-7/challenges/arraylist-ooadj)
+
+Compulsorily use the concept of ArrayList to solve this problem. Failure to abide by this rule will result in zero marks.
+
+A list of cars models (comma-separated), will be given in one line.
+In the next line, there will be a list of horsepowers, which correspond to the respective cars above.
+
+Populate two Java ArrayLists, one of car models and one of their horsepowers.
+Sort the car models by their horsepowers.
+As output, use the car model ArrayList's `toString()` method and print.
+
+Input Example:
+```
+Mustang,Miata,Z
+650,150,400
+```
+
+Constraints:
+- `1 <= n <= 100`, where `n` is the number of car models.
+
+Every car's name is unique.
+
+Output Example:
+```
+[Miata, Z, Mustang]
+```
+
+<details><summary>Solution</summary>
+
+### Code
+
+```java
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String[] cars = sc.nextLine().split(",");
+        String[] horsepowers = sc.nextLine().split(",");
+        ArrayList<String> carModels = new ArrayList<String>(Arrays.asList(cars));
+        ArrayList<String> carHorsepowers = new ArrayList<String>(Arrays.asList(horsepowers));
+        ArrayList<Integer> carHorsepowersInt = new ArrayList<Integer>();
+        for (String s : carHorsepowers) {
+            carHorsepowersInt.add(Integer.parseInt(s));
+        }
+        for (int i = 0; i < carHorsepowersInt.size(); i++) {
+            for (int j = i + 1; j < carHorsepowersInt.size(); j++) {
+                if (carHorsepowersInt.get(i) > carHorsepowersInt.get(j)) {
+                    int temp = carHorsepowersInt.get(i);
+                    carHorsepowersInt.set(i, carHorsepowersInt.get(j));
+                    carHorsepowersInt.set(j, temp);
+                    String temp2 = carModels.get(i);
+                    carModels.set(i, carModels.get(j));
+                    carModels.set(j, temp2);
+                }
+            }
+        }
+        System.out.println(carModels.toString());
+    }
+}
+```
+
+</details>
+
+### [Linked Lists Problem Statement](https://www.hackerrank.com/contests/ooadj-lab-week-7/challenges/linked-list-ooadj)
+
+Compulsorily use the concept of Linked List to solve this problem. Failure to abide by this rule will result in zero marks.
+
+The input will be a single line of words, separated by single spaces.
+
+Create a linked list, and based on each input, perform an action on this linked list:
+
+1. If the word is a number, then add it to the end list.
+2. If the word is `+`, then add all the existing elements in the list, and add this sum to the beginning of the list.
+3. If the word is `-`, then subtract the last element of the list from the 2nd last element of the list, and add it to the end of the list.
+4. If the word is `d`, then add a number equal to the first element to the end of the list.
+5. Any of the above actions is not possible, then ignore the input word and move on to the next one.
+
+Finally, print the list using it's `toString()` method.
+
+Input Example:
+```
+12 13 2 4 + - + d d
+```
+
+Constraints:
+- Number of words, `n < 100`.
+
+Output Example:
+```
+[60, 31, 12, 13, 2, 4, -2, 60, 60]
+```
+
+<details><summary>Solution</summary>
+
+### Code
+
+```java
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        LinkedList<Integer> list = new LinkedList<Integer>();
+        String[] input = sc.nextLine().split(" ");
+        sc.close();
+        for (String s : input) {
+            if (s.equals("+")) {
+                if (list.size() < 1) {
+                    continue;
+                }
+                int sum = 0;
+                for (int i : list) {
+                    sum += i;
+                }
+                list.addFirst(sum);
+            } else if (s.equals("-")) {
+                if (list.size() < 2) {
+                    continue;
+                }
+                int last = list.removeLast();
+                int secondLast = list.getLast();
+                list.addLast(last);
+                list.addLast(secondLast - last);
+            } else if (s.equals("d")) {
+                if (list.size() < 1) {
+                    continue;
+                }
+                list.addLast(list.getFirst());
+            } else {
+                list.addLast(Integer.parseInt(s));
+            }
+        }
+        System.out.println(list.toString());
+    }
+}
+```
+
+</details>
+
+### [Stacks Problem Statement](https://www.hackerrank.com/contests/ooadj-lab-week-7/challenges/stack-ooadj)
+
+Compulsorily use the concept of Stack to solve this problem. Failure to abide by this rule will result in zero marks.
+
+You will be given a list of numbers, separated by newlines, as your input. Using only two stacks, and no built-in sorting methods, ensure that the main stack is sorted such that the top is the largest number.
+
+Finally, use the toString() method and print the contents of the stack.
+
+_Hint:_
+The logic is as follows (don't read it if you want a challenge, but reading it won't make it super easy either):
+- As you read numbers, push them onto the stack.
+- If a number you are pushing onto the stack is lesser than the top, then keep popping elements (into temporary stack) until you are able to push the current number onto the stack.
+- Return all temp stack elements to the main stack, and continue.
+
+Input Format:
+- One number per line, upto 1000 lines.
+
+Constraints:
+- Number of numbers <= 1000
+
+Output Format:
+- System.out.println(stack.toString())
+
+<details><summary>Solution</summary>
+
+### Code
+
+```java
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Stack<Integer> mainStack = new Stack<Integer>();
+        Stack<Integer> tempStack = new Stack<Integer>();
+        while (sc.hasNext()) {
+            int num = sc.nextInt();
+            while (!mainStack.isEmpty() && num < mainStack.peek()) {
+                tempStack.push(mainStack.pop());
+            }
+            mainStack.push(num);
+            while (!tempStack.isEmpty()) {
+                mainStack.push(tempStack.pop());
+            }
+        }
+        System.out.println(mainStack.toString());
+    }
+}
+```
+
+</details>
+
+## Lab 8: Multithreading and Serialization
+
+### Multithreading Problem Statement
+
+There is a restaurant that needs to assign all of its orders to its chefs. Each dish has a specific amount of time it takes to be prepared, and each chef can only work on one dish at a time. Use multithreading to get the sequence of completion of the orders, assuming they are being concurrently prepared by all the chefs.
+
+Display messages when an order is assigned to the chef, when the order is in progress, and when the order is ready. In the implementation, it would make things convenient to create a fixed thread pool with the number of threads equal to the number of chefs. You can use the sleep method to simulate the preparation of a dish.
+
+Note that based on the way you assign orders to a chef, and the number of chefs you have in your restaurant, you may have orders completed in a different order. In this example output, I have cyclically assigned orders to each of the 3 total chefs.
+
+#### Input
+```
+Burger 6 minutes
+Salad 3 minutes
+Sundae 4 minutes
+Pizza 8 minutes
+Pasta 7 minutes
+Steak 9 minutes
+Soup 2 minutes
+```
+
+#### Output
+```
+Order #1 assigned to Chef #1
+Order #2 assigned to Chef #2
+Order #3 assigned to Chef #3
+Order #4 assigned to Chef #1
+Order #5 assigned to Chef #2
+Order #6 assigned to Chef #3
+Order #7 assigned to Chef #1
+Order #7 for Soup in progress
+Order #3 for Ice Cream Sundae in progress
+Order #2 for Salad in progress
+Order #1 for Burger in progress
+Order #7 is ready.
+Order #5 for Pasta in progress
+Order #2 is ready.
+Order #6 for Steak in progress
+Order #4 for Pizza in progress
+Order #3 is ready.
+Order #5 is ready.
+Order #6 is ready.
+Order #4 is ready.
+Order #1 is ready.
+```
+
+### Serialization Problem Statement
+
+Create a command-line application for saving contacts.
+
+A contact must contain a person’s name, email address and phone number. The application must have methods for the following:
+1.	Add a new contact.
+2.	View all contacts.
+3.	Edit an existing contact.
+4.	Delete an existing contact.
+
+Make sure the edge cases (deleting or editing an existing contact) are handled properly.
+
+Use serialization for data persistence, so that each time the program is invoked, it reads from a locally-stored address book, and every time the program is exited, the new state of the address book overwrites the previous save.
+
+Look into `ObjectInputStream` and `FileInputStream`, and `ObjectOutputStream` and `FileOutputStream` for reading from and writing to the local save of the address book. These classes are imported when you `import java.io.*`.
+
+#### Example Interaction
+```
+Welcome to Contacts App!
+
+1. Add a new contact
+2. View all contacts
+3. Edit an existing contact
+4. Delete an existing contact
+5. Exit
+
+Enter your choice: 1
+Enter name: John Doe
+Enter phone number: 1234567890
+Enter email: john@example.com
+Contact added successfully!
+
+Enter your choice: 1
+Enter name: Jane Smith
+Enter phone number: 9876543210
+Enter email: jane@example.com
+Contact added successfully!
+
+Enter your choice: 2
+Contacts:
+1. Name: John Doe, Phone: 1234567890, Email: john@example.com
+2. Name: Jane Smith, Phone: 9876543210, Email: jane@example.com
+
+Enter your choice: 3
+Select a contact to edit:
+1. Name: John Doe, Phone: 1234567890, Email: john@example.com
+2. Name: Jane Smith, Phone: 9876543210, Email: jane@example.com
+Enter index of contact to edit: 1
+Enter updated details:
+Enter name: John Deer
+Enter phone number: 1231231234
+Enter email: john.deer@example.com
+Contact updated successfully!
+
+Enter your choice: 2
+Contacts:
+1. Name: John Deer, Phone: 1231231234, Email: john.deer@example.com
+2. Name: Jane Smith, Phone: 9876543210, Email: jane@example.com
+
+Enter your choice: 4
+Select a contact to delete:
+1. Name: John Deer, Phone: 1231231234, Email: john.deer@example.com
+2. Name: Jane Smith, Phone: 9876543210, Email: jane@example.com
+Enter index of contact to delete: 2
+Contact deleted successfully!
+
+Enter your choice: 2
+Contacts:
+1. Name: John Deer, Phone: 1231231234, Email: john.deer@example.com
+
+Enter your choice: 5
+Exiting... Contacts saved.
+```
+
+## Lab 9: MVC Architecture
+
+The MVC is one of the most widely used architecture patterns for application and web development. MVC stands for Model View Controller:
+- **Model**: Contains the data
+- **View**: Contains the presentation logic
+- **Controller**: Contains the backend code
+
+To complete this week’s lab, use any of the following frameworks:
+- Spring
+- Grails
+- Vaadin
+- Play
+- Struts
+- Java Server Faces
+
+Last year, when I was in your place, I found that creating an entire application, along with a GUI using a Java web-app framework (such as *Spring Boot*) was a pretty daunting task–especially to complete within a single lab session.
+
+To make things easier for you, I have created template code using *Vaadin* with all the required classes and methods, you only need to fill them in. Use [this guide](https://vaadin.com/docs/latest/guide/quick-start) to set up *Vaadin* on your system.
+
+From [here](9-mvc), download `code.zip` and extract it into any directory. You will find the main MVC files in `mvc\src\main\java\com\example\application\views\main`. Once you have filled in all the methods, `CD` into the `mvc` folder, and run `mvnw` on Windows, or `./mvnw` on Unix to run the project. You can also use the quick start project in the guide page to get started.
+
+In case you decide to use *Vaadin*, look into the following components:
+- [Grid](https://vaadin.com/docs/latest/components/grid)
+- [Button](https://vaadin.com/docs/latest/components/button)
+- [TextField](https://vaadin.com/docs/latest/components/text-field)
+- [Dialog](https://vaadin.com/docs/latest/components/dialog)
+
+### Problem Statement
+
+Create an employee directory by storing each employee’s name using a HashMap, where the key is their ID and value is their name. Create another HashMap that determines the employees who are under a specific employee. Here, the key will be an employee ID, and the value will be a List of reporting employee IDs.
+
+In the UI, have methods to display all employees, add an employee, get an employee’s subordinates’ names, and add a subordinate to an employee.
+
+### Solution
+
+[mvc folder](9-mvc/mvc/)

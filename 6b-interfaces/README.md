@@ -36,8 +36,6 @@ Example outputs:
 - `KGONRYRTOF`
 - `H9DAKSNYKF`
 
-<details><summary>Solution</summary>
-
 ### Code
 
 ```java
@@ -134,5 +132,3 @@ public class Solution {
     }
 }
 ```
-
-</details>

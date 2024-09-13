@@ -28,8 +28,6 @@ abc_def@example.com
 28
 ```
 
-<details><summary>Solution</summary>
-
 ### Code
 
 ```java
@@ -94,5 +92,3 @@ public class Solution {
     }
 }
 ```
-
-</details>
