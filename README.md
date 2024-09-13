@@ -5,7 +5,6 @@ This repository contains assignments and files I created during my stint as an u
 
 <!-- TOC start (generated with https://github.com/derlin/bitdowntoc) -->
 
-- [oops-java-ta](#oops-java-ta)
    * [Lab 1: Use-case Modeling](#lab-1-use-case-modeling)
    * [Lab 2: Class Diagrams](#lab-2-class-diagrams)
    * [Lab 3: Activity and State Diagrams](#lab-3-activity-and-state-diagrams)
