@@ -17,7 +17,7 @@ Last year, when I was in your place, I found that creating an entire application
 
 To make things easier for you, I have created template code using *Vaadin* with all the required classes and methods, you only need to fill them in. Use [this guide](https://vaadin.com/docs/latest/guide/quick-start) to set up *Vaadin* on your system.
 
-From [here]([9-mvc](https://github.com/ashishkulkarnii/oops-java-ta/raw/refs/heads/main/9-mvc/code.zip), download `code.zip` and extract it into any directory. You will find the main MVC files in `mvc\src\main\java\com\example\application\views\main`. Once you have filled in all the methods, `CD` into the `mvc` folder, and run `mvnw` on Windows, or `./mvnw` on Unix to run the project. You can also use the quick start project in the guide page to get started.
+From [here](https://github.com/ashishkulkarnii/oops-java-ta/raw/refs/heads/main/9-mvc/code.zip), download `code.zip` and extract it into any directory. You will find the main MVC files in `mvc\src\main\java\com\example\application\views\main`. Once you have filled in all the methods, `CD` into the `mvc` folder, and run `mvnw` on Windows, or `./mvnw` on Unix to run the project. You can also use the quick start project in the guide page to get started.
 
 In case you decide to use *Vaadin*, look into the following components:
 - [Grid](https://vaadin.com/docs/latest/components/grid)
