@@ -1,5 +1,5 @@
 # oops-java-ta
-This repository contains assignments and files I created during my stint as an undergraduate TA (teaching assistant) for the 6th-semester course _Object-Oriented Analysis and Design with Java_ (UE21CS352B).
+This repository contains assignments and files I created during my stint as an Undergraduate Teaching Assistant for the 6th-semester course _Object-Oriented Analysis and Design with Java_ (UE21CS352B), instructed by [Prof. Priya Badrinath](https://staff.pes.edu/nm1327/).
 
 ## Contents:
 
